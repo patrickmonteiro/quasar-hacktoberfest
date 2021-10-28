@@ -3,7 +3,10 @@
 Quasar app for hacktoberfest contributions
 
 ## How can I contribute?
-You should add your information to **contributors.js** and submit your pull request.
+
+Resolve an [issue](https://github.com/patrickmonteiro/quasar-hacktoberfest/issues) that is listed or implement a new feature that you think would look nice in the repository.
+
+Then add your information to **contributors.js** and submit your pull request.
 Note: For the githubImgProfile parameter, go to your github profile and right click on your profile image, then click "copy image address".
 
 ```js
