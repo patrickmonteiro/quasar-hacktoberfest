@@ -10,5 +10,11 @@ export const contributors = [
     githubUrl: 'https://github.com/rafaeusilvar',
     linkedinUrl: 'https://www.linkedin.com/in/rafael-silva-480a67222/',
     githubImgProfile: 'https://avatars.githubusercontent.com/u/92217304?v=4'
+  },
+  {
+    name: 'Julio Azancort',
+    githubUrl: 'https://github.com/Jazancort',
+    linkedinUrl: 'https://www.linkedin.com/in/jazancort/',
+    githubImgProfile: 'https://avatars.githubusercontent.com/u/45800951?v=4'
   }
 ]

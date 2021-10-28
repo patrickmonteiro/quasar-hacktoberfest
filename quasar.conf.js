@@ -32,7 +32,7 @@ module.exports = function (/* ctx */) {
     extras: [
       // 'ionicons-v4',
       // 'mdi-v5',
-      // 'fontawesome-v5',
+      'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
       // 'line-awesome',
@@ -89,7 +89,7 @@ module.exports = function (/* ctx */) {
           accent: '#9C27B0',
           dark: '#1d1d1d',
           positive: '#90a88b',
-          negative: '#C10015',
+          negative: '#F74700',
           info: '#31CCEC',
           warning: '#F2C037'
         }
