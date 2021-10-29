@@ -50,10 +50,12 @@ module.exports = {
   // add your custom rules here
   rules: {
     // allow async-await
+    'camelcase': 0,
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
     'arrow-parens': 'off',
     'one-var': 'off',
+    'space-before-function-paren': 'off',
 
     'import/first': 'off',
     'import/named': 'error',
