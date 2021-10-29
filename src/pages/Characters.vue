@@ -2,7 +2,7 @@
   <q-page padding>
     <h3>Agentes:</h3>
     <div class="row">
-      <div class="col-2" v-for="agent in characters" :key="agent.uuid">
+      <div class="q-pa-xs col-xs-12 col-sm-4 col-md-2" v-for="agent in characters" :key="agent.uuid">
         <div class="q-pb-md">
           <q-card @click="show(agent.uuid)" v-ripple class="agent-card cursor-pointer q-hoverable">
             <span class="q-focus-helper"></span>
@@ -45,7 +45,7 @@
           </q-card-section>
 
           <div class="row" style="justify-content: center;">
-            <q-card-section class="col-2" v-for="ability in character.abilities" :key="ability.slot">
+            <q-card-section class="q-pa-xs q-gutter-x-md" v-for="ability in character.abilities" :key="ability.slot">
               <div >
                 <q-btn
                 fab
@@ -58,9 +58,7 @@
               </div>
             </q-card-section>
           </div>
-
           <q-separator />
-
         </q-card>
       </q-dialog>
     </div>
@@ -106,12 +104,12 @@ export default {
 <style scoped>
 .agent-card {
   width: 100%;
-  max-width: 250px;
+  max-width: 600px;
   background-color: #90A88B;
 }
 .agent-dialog {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   background-color: #90A88B;
 }
 .wrapper {
