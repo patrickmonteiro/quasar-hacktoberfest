@@ -39,6 +39,14 @@
             <q-item-label>Home</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable tag="a" to="valorant">
+          <q-item-section avatar>
+            <q-icon name="gamepad" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Agentes do Valorant</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item clickable tag="a" target="_blank" href="https://github.com/patrickmonteiro/quasar-hacktoberfest">
           <q-item-section avatar>
             <q-icon name="mdi-github" />
