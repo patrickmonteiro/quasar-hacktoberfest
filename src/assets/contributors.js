@@ -16,5 +16,11 @@ export const contributors = [
     githubUrl: 'https://github.com/Jazancort',
     linkedinUrl: 'https://www.linkedin.com/in/jazancort/',
     githubImgProfile: 'https://avatars.githubusercontent.com/u/45800951?v=4'
+  },
+  {
+    name: 'Daywison Silva',
+    githubUrl: 'https://github.com/DaywisonSilva',
+    linkedinUrl: 'https://www.linkedin.com/in/daywison-s-ab11b6121/',
+    githubImgProfile: 'https://avatars.githubusercontent.com/u/54292958?v=4'
   }
 ]

@@ -6,11 +6,11 @@
           alt="Quasar logo"
           src="~assets/logo-hacktoberfest.svg"
           :style="$q.screen.gt.xs ? 'width: 600px;' : 'width: 300px;'"
-        >
+        />
       </div>
     </div>
     <!-- <div class="row q-col-gutter-md"> -->
-      <q-table
+    <q-table
       grid
       title="Contributors"
       :data="contributors"
@@ -29,40 +29,53 @@
 
       <template v-slot:item="props">
         <div class="q-pa-xs col-xs-12 col-sm-4 col-md-2">
-          <q-card class="my-card">
+          <q-card
+            class="my-card"
+            @click="
+              () => {
+                dialogUserOpen = true
+                selectedUser = props.row
+              }
+            "
+            style="height: 100%"
+          >
+            <img :src="props.row.githubImgProfile" />
 
-          <img :src="props.row.githubImgProfile">
+            <q-card-section>
+              <div class="text-h6 text-center">{{ props.row.name }}</div>
+            </q-card-section>
 
-          <q-card-section>
-            <div class="text-h6 text-center">{{ props.row.name }}</div>
-          </q-card-section>
-
-          <q-card-actions align="center">
-            <q-btn
-              flat
-              round
-              color="primary"
-              icon="mdi-github"
-              type="a"
-              :href="props.row.githubUrl"
-              target="_blank"
-            />
-            <q-btn
-              flat
-              round
-              color="primary"
-              icon="mdi-linkedin"
-              type="a"
-              :href="props.row.linkedinUrl"
-              target="_blank"
-            />
-          </q-card-actions>
-        </q-card>
+            <q-card-actions align="center">
+              <q-btn
+                flat
+                round
+                color="primary"
+                icon="mdi-github"
+                type="a"
+                :href="props.row.githubUrl"
+                target="_blank"
+              />
+              <q-btn
+                flat
+                round
+                color="primary"
+                icon="mdi-linkedin"
+                type="a"
+                :href="props.row.linkedinUrl"
+                target="_blank"
+              />
+            </q-card-actions>
+          </q-card>
         </div>
       </template>
     </q-table>
-      <!-- <div class="col-md-2 col-sm-6 col-xs-6"> -->
-        <!-- <q-card class="my-card">
+    <app-dialog-user
+      :isOpen="dialogUserOpen"
+      :info="selectedUser"
+      @onHide="dialogUserOpen = false"
+    ></app-dialog-user>
+    <!-- <div class="col-md-2 col-sm-6 col-xs-6"> -->
+    <!-- <q-card class="my-card">
           <img :src="contributor.githubImgProfile">
 
           <q-card-actions align="center">
@@ -86,7 +99,7 @@
             />
           </q-card-actions>
         </q-card> -->
-      <!-- </div> -->
+    <!-- </div> -->
     <!-- </div> -->
     <!-- <img
       alt="Quasar logo"
@@ -98,16 +111,38 @@
 
 <script>
 import { contributors } from 'src/assets/contributors'
+import AppDialogUser from 'src/components/DialogUser.vue'
 export default {
   name: 'PageIndex',
-  data () {
+  data() {
     return {
       contributors: contributors,
+      dialogUserOpen: false,
       pagination: {
         page: 1,
         rowsPerPage: 10
-      }
+      },
+      selectedUser: {}
     }
+  },
+  methods: {
+    log() {
+      this.dialogUserOpen = false
+    }
+  },
+  // watch: {
+  //   selectedUser() {
+  //     console.log(this.selectedUser)
+  //   }
+  // },
+  components: {
+    AppDialogUser
   }
 }
 </script>
+
+<style scoped>
+.my-card {
+  cursor: pointer;
+}
+</style>

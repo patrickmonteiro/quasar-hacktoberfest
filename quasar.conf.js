@@ -6,9 +6,9 @@
 // Configuration for your app
 // https://v1.quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
-const ESLintPlugin = require('eslint-webpack-plugin')
+const ESLintPlugin = require( 'eslint-webpack-plugin' )
 
-module.exports = function (/* ctx */) {
+module.exports = function (/* ctx */ ) {
   return {
     // https://v1.quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -20,7 +20,7 @@ module.exports = function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v1.quasar.dev/quasar-cli/boot-files
     boot: [
-
+      'axios'
     ],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -65,9 +65,9 @@ module.exports = function (/* ctx */) {
 
       // https://v1.quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      chainWebpack (chain) {
-        chain.plugin('eslint-webpack-plugin')
-          .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }])
+      chainWebpack ( chain ) {
+        chain.plugin( 'eslint-webpack-plugin' )
+          .use( ESLintPlugin, [{ extensions: ['js', 'vue'] }] )
       }
     },
 
@@ -198,7 +198,7 @@ module.exports = function (/* ctx */) {
       // More info: https://v1.quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (/* cfg */) {
+      extendWebpack (/* cfg */ ) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }
