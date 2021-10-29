@@ -18,7 +18,7 @@
       </div>
 
       <q-dialog v-model="showDialog">
-        <q-card class="agent-card">
+        <q-card class="agent-dialog">
 
           <q-card-section class="bg-white">
             <div class="row">
@@ -70,6 +70,7 @@
 <script>
 
 export default {
+  name: 'Characters',
   data () {
     return {
       characters: [],
@@ -85,7 +86,6 @@ export default {
       try {
         const response = await this.$axios.get('https://valorant-api.com/v1/agents?language=pt-BR')
         this.characters = response.data.data
-        console.log(this.characters)
       } catch (err) {
         console.log(err)
       }
@@ -94,7 +94,6 @@ export default {
       try {
         const response = await this.$axios.get(`https://valorant-api.com/v1/agents/${uuid}?language=pt-BR`)
         this.character = response.data.data
-        console.log(this.character)
         this.showDialog = true
       } catch (err) {
         console.log(err)
@@ -104,16 +103,21 @@ export default {
 }
 </script>
 
-<style>
-.wrapper {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 250px;
-}
+<style scoped>
 .agent-card {
   width: 100%;
   max-width: 250px;
   background-color: #90A88B;
+}
+.agent-dialog {
+  width: 100%;
+  max-width: 500px;
+  background-color: #90A88B;
+}
+.wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 350px;
 }
 </style>
